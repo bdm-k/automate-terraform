@@ -1,7 +1,7 @@
 resource "aws_instance" "main-public" {
-  ami           = "ami-07200fa04af91f087"
-  instance_type = "t2.micro"
-  subnet_id = aws_subnet.test-1a.id
+  ami                    = "ami-07200fa04af91f087"
+  instance_type          = "t2.micro"
+  subnet_id              = aws_subnet.test-1a.id
   vpc_security_group_ids = [aws_security_group.allow_ssh.id]
 
   tags = {
@@ -15,17 +15,17 @@ resource "aws_security_group" "allow_ssh" {
   vpc_id      = aws_vpc.test.id
 
   ingress {
-    from_port        = 22
-    to_port          = 22
-    protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"]
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   egress {
-    from_port        = 0
-    to_port          = 0
-    protocol         = "-1"
-    cidr_blocks      = ["0.0.0.0/0"]
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   tags = {

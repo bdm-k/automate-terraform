@@ -7,8 +7,8 @@ resource "aws_vpc" "test" {
 }
 
 resource "aws_subnet" "test-1a" {
-  vpc_id     = aws_vpc.test.id
-  cidr_block = "172.16.0.0/24"
+  vpc_id            = aws_vpc.test.id
+  cidr_block        = "172.16.0.0/24"
   availability_zone = "ap-northeast-1a"
 
   tags = {
@@ -17,8 +17,8 @@ resource "aws_subnet" "test-1a" {
 }
 
 resource "aws_subnet" "test-1c" {
-  vpc_id     = aws_vpc.test.id
-  cidr_block = "172.16.1.0/24"
+  vpc_id            = aws_vpc.test.id
+  cidr_block        = "172.16.1.0/24"
   availability_zone = "ap-northeast-1c"
 
   tags = {
@@ -27,8 +27,8 @@ resource "aws_subnet" "test-1c" {
 }
 
 resource "aws_subnet" "test-1d" {
-  vpc_id     = aws_vpc.test.id
-  cidr_block = "172.16.2.0/24"
+  vpc_id            = aws_vpc.test.id
+  cidr_block        = "172.16.2.0/24"
   availability_zone = "ap-northeast-1d"
 
   tags = {
@@ -53,7 +53,7 @@ resource "aws_route_table" "test" {
   }
 
   tags = {
-    Name  = "test"
+    Name = "test"
   }
 }
 
@@ -61,7 +61,7 @@ resource "aws_route_table" "test-private" {
   vpc_id = aws_vpc.test.id
 
   tags = {
-    Name  = "test-private"
+    Name = "test-private"
   }
 }
 
