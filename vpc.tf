@@ -1,11 +1,3 @@
-data "aws_vpc" "main" {
-  id = "vpc-0be0f2ce9a53c9fbc"
-}
-
-data "aws_subnet" "main" {
-  id = "subnet-089c3a6855c69537b"
-}
-
 resource "aws_vpc" "test" {
   cidr_block = "172.16.0.0/16"
 
